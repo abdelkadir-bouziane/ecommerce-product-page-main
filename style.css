@@ -1,0 +1,394 @@
+.colors {
+  /* primary */
+  color: rgb(255, 125, 26);
+  color: rgb(255, 237, 224);
+  /* Neutral */
+  color: rgb(29, 32, 37);
+  color: rgb(104, 112, 125);
+  color: rgb(182, 188, 200);
+  color: rgb(247, 248, 253);
+}
+
+@font-face {
+  font-family: "Crossten Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Crossten Light"), url("CrosstenLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Crossten Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Crossten Medium"), url("CrosstenMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Crossten Semi Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Crossten Semi Bold"), url("CrosstenSemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Crossten Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Crossten Bold"), url("CrosstenBold.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.open-menu-icon,
+.close-menu-icon {
+  display: none;
+}
+
+body {
+  font-family: "Crossten Light", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/*---------------------------------------- header ----------------------------------------*/
+
+header {
+  width: 100%;
+  max-width: 1050px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(182, 188, 200);
+}
+
+.logo-and-nav {
+  display: flex;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+nav ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(104, 112, 125);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 10px;
+  transform: translate(0, 1px);
+  transition: border 100ms, color 100ms;
+}
+
+nav ul li a:hover {
+  color: rgb(29, 32, 37);
+  border-bottom: 3px solid rgb(255, 125, 26);
+}
+
+.cart-and-avatar {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.avatar img {
+  height: 50px;
+  display: block;
+  box-sizing: content-box;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+.avatar img:hover {
+  margin: 0;
+  border: 2px solid rgb(255, 125, 26);
+}
+
+.cart-icon {
+  margin-right: 40px;
+  position: relative;
+}
+
+.cart-icon svg {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.cart-icon svg path {
+  transition: fill 100ms;
+}
+
+.cart-icon svg:hover path {
+  fill: rgb(29, 32, 37);
+}
+
+.cart {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, 0);
+  top: 50px;
+  background-color: white;
+  width: 250px;
+  min-height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 15px 50px -20px rgba(0, 0, 0, 0.3);
+}
+
+.cart h2 {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 0.9em;
+  color: rgb(29, 32, 37);
+  padding: 15px 20px;
+  border-bottom: 1px solid rgb(182, 188, 200);
+}
+
+/*---------------------------------------- main ------------------------------------------*/
+
+main {
+  width: 100%;
+  max-width: 1050px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.images-area {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-product,
+.list-images-product,
+.text-area-content {
+  width: 68%;
+}
+
+.image-product {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.list-images-product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-images-product div {
+  width: 21%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list-images-product img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.list-images-product img:hover {
+  opacity: 0.5;
+}
+
+.selected-image {
+  border: 2px solid rgb(255, 125, 26);
+}
+
+.selected-image img {
+  opacity: 0.5;
+}
+
+.text-area {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-area h2 {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(255, 125, 26);
+  margin-bottom: 1.3em;
+}
+
+.text-area h1 {
+  font-family: "Crossten Bold", sans-serif;
+  font-size: 2.2em;
+  color: rgb(29, 32, 37);
+  margin-bottom: 0.8em;
+}
+
+.text-area p {
+  font-size: 0.8em;
+  color: rgb(104, 112, 125);
+  line-height: 1.7em;
+  margin-bottom: 1.5em;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.prices div {
+  display: flex;
+  align-items: center;
+}
+
+.prices strong {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 1.4em;
+  color: rgb(29, 32, 37);
+}
+
+.prices .reduction {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 0.8em;
+  color: rgb(255, 125, 26);
+  background-color: rgb(255, 237, 224);
+  padding: 0.15em 0.5em;
+  border-radius: 5px;
+  margin-left: 1em;
+}
+
+.prices .old-price {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 0.8em;
+  color: rgb(182, 188, 200);
+  text-decoration: line-through;
+  margin-top: 0.4em;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.number-input {
+  position: relative;
+  width: 33%;
+}
+
+#article-number {
+  font-family: "Crossten Semi Bold", sans-serif;
+  font-size: 0.9em;
+  text-align: center;
+  display: block;
+  height: 2.7em;
+  width: 100%;
+  background-color: rgb(247, 248, 253);
+  color: rgb(29, 32, 37);
+  border: none;
+  border-radius: 8px;
+}
+
+#article-number::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+#article-number:focus {
+  outline: none;
+}
+
+#minus-btn,
+#plus-btn {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translate(0, -50%) scale(0.9);
+  height: fit-content;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+#minus-btn:hover path,
+#plus-btn:hover path,
+.btns button:hover {
+  opacity: 0.6;
+}
+
+#minus-btn {
+  left: 0;
+  padding: 20px 10px;
+}
+
+#plus-btn {
+  right: 0;
+  padding: 16px 10px;
+}
+
+.btns button {
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7em;
+  width: 64%;
+  background-color: rgb(255, 125, 26);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 20px 30px -10px rgba(255, 125, 26, 0.5);
+}
+
+.btns button span {
+  font-family: "Crossten Semi Bold", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 0.9em;
+  margin-left: 1em;
+}
+
+.btns button svg {
+  transform: scale(0.7);
+}
+
+/*---------------------------------------- footer ----------------------------------------*/
+
+footer {
+  width: 100%;
+  max-width: 1050px;
+  text-align: center;
+  font-size: 0.8em;
+  margin: 5px 0;
+  color: rgb(104, 112, 125);
+}
+
+footer a {
+  font-family: "Crossten Medium", sans-serif;
+  color: rgb(104, 112, 125);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgb(255, 125, 26);
+}
